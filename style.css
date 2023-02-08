@@ -10,6 +10,8 @@ body {
     color: #c6d4df;
     font-size: 20px;
     padding: 30px;
+
+    padding-top: 60px;
 }
 
 input {

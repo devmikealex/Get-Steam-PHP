@@ -10,7 +10,7 @@
 
 <?php
 require_once('./func/fetch.php');
-$gameID = $_GET['gameid'];
+// $gameID = $_GET['gameid'];
 // $title = 'asljgakljgsdkf';
 // $content = 'jb sdljkf sldflsdg lsjdfgl sjdf glsjdf gsdfg';
 ?>
@@ -48,10 +48,10 @@ $gameID = $_GET['gameid'];
         const playtime_filter_min = urlParams.get('playtimemin') || 10
         newCursor = encodeURIComponent(newCursor)
         console.log("🚀 ~ file: gamereview.php:50 ~ LoadMoreReviews ~ newCursor", newCursor)
-        window.location.href = `/gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}&cursor=${newCursor}`
+        window.location.href = `./gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}&cursor=${newCursor}`
     }
     function goToLink(gameID, playtime_filter_min) {
-        window.location.href = `/gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}`
+        window.location.href = `./gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}`
     }
     function openLink(e) {
         e.preventDefault()

@@ -1,10 +1,19 @@
 <?php
 
-// phpinfo();
-
-$gameID = $_GET['gameid'];
-$playtimemin = $_GET['playtimemin'];
-$cursor = $_GET['cursor'];
+if ($_GET['gameid'] ?? null) {
+    $gameID = $_GET['gameid'];
+} else {
+    $gameID = 0;
+    $content = '-';
+    $title = 'No game ID';
+    return;
+}
+if ($_GET['playtimemin'] ?? null) {
+    $playtimemin = $_GET['playtimemin'];
+}
+if ($_GET['cursor'] ?? null) {
+    $cursor = $_GET['cursor'];
+}
 
 // Получить данные игры для проверки существования success true
 $urlGameInfo = "https://store.steampowered.com/api/appdetails?appids=$gameID";
@@ -24,17 +33,17 @@ if ($gameInfo->$gameID->success) {
     $content = getReview();
 } else {
     $title = 'Game not found';
+    $content = '-';
 }
 
-function getReview()
-{
+function getReview() {
     global $playtimemin, $gameID, $cursor;
     $playtimemin = $playtimemin ? $playtimemin : 10;
     $cursor = $cursor ? $cursor : '*';
     $cursor = urlencode($cursor);
     $url = "https://store.steampowered.com/appreviews/$gameID?cursor=$cursor&day_range=30&start_date=-1&end_date=-1&date_range_type=all&filter=recent&language=russian&l=russian&review_type=negative&purchase_type=all&playtime_filter_min=${playtimemin}&playtime_filter_max=0&filter_offtopic_activity=1";
     $gameReview = file_get_contents($url);
-    file_put_contents("t:/gameReview-$gameID.txt", $gameReview);
+    // file_put_contents("t:/gameReview-$gameID.txt", $gameReview);
     $gameReview = json_decode($gameReview);
     // print_r($gameReview);
     return $gameReview->html;

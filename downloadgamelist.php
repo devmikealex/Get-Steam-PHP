@@ -2,7 +2,8 @@
 
 $url = 'http://api.steampowered.com/ISteamApps/GetAppList/v0002/?format=json';
 if (file_put_contents('api.steampowered.com.json', file_get_contents($url))) {
-    echo "File downloaded successfully";
+    echo "File downloaded successfully.<br>";
+    echo '<a href="./index.php">На главную</a>';
 } else {
     echo "File downloading failed.";
 }

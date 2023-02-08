@@ -14,7 +14,7 @@
             <img width="200px" src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg"
                 alt="">
         </a>
-        <h3>Получить свежие негативные обзоры</h3>
+        <h3>Получить свежие негативные обзоры PHP</h3>
     </div>
     <form>
         <label for="game-id">Steam Game ID:</label>
@@ -25,7 +25,7 @@
     </form>
     <div class="info" id="game-id-info"></div>
     <form>
-        <label for="game-link">Steam Game Link <a href="/clipboard">(из буфера)</a>:</label>
+        <label for="game-link">Steam Game Link <a href="./clipboard">(из буфера)</a>:</label>
         <input type="text" id="game-link" name="game-link"
             placeholder="https://store.steampowered.com/app/275850/No_Mans_Sky/">
         <input type="submit" value="Получить" onclick="openLink(event)">
@@ -114,7 +114,7 @@
 
         function goToLink(gameID, playtime_filter_min) {
             playtime_filter_min = document.getElementById('playtime_filter_min').value.trim()
-            window.location.href = `/gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}`
+            window.location.href = `./gamereview.php?gameid=${gameID}&playtimemin=${playtime_filter_min}`
         }
 
         function openLink(e) {
