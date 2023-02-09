@@ -7,9 +7,10 @@ function debug_to_console($output, $title = '')
     if (is_object($output) || is_array($output)) {
         $output = preg_replace('~[\r\n]+~', '\n', print_r($output, true));
     }
-    echo <<<SCRIPT
-    <script>console.log('PHPDebug > $title : $output');</script>
-    SCRIPT;
+    echo "<script>console.log('PHPDebug > $title : $output');</script>";
+    // echo <<<SCRIPT
+    // <script>console.log('PHPDebug > $title : $output');</script>
+    // SCRIPT;
 }
 
 // TestDTC();

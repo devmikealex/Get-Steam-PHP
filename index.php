@@ -15,8 +15,7 @@
 <body>
     <div class="logo">
         <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">
-            <img width="200px" src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg"
-                alt="">
+            <img width="200px" src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg" alt="">
         </a>
         <h3>Получить свежие негативные обзоры PHP</h3>
     </div>
@@ -29,9 +28,8 @@
     </form>
     <div class="info" id="game-id-info"></div>
     <form>
-        <label for="game-link">Steam Game Link <a href="./clipboard">(из буфера)</a>:</label>
-        <input type="text" id="game-link" name="game-link"
-            placeholder="https://store.steampowered.com/app/275850/No_Mans_Sky/">
+        <label for="game-link">Steam Game Link <a href="./clipboard.php">(из буфера)</a>:</label>
+        <input type="text" id="game-link" name="game-link" placeholder="https://store.steampowered.com/app/275850/No_Mans_Sky/">
         <input type="submit" value="Получить" onclick="openLink(event)">
         <input type="button" value="Очистить" onclick="clearInput('game-link')">
         <!-- <input type="button" value="Вставить" onclick="paste(event)"> -->

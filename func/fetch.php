@@ -28,10 +28,10 @@ $gameInfo = json_decode($gameInfo);
 if ($gameInfo->$gameID->success) {
     // Получить обзоры игры
     $title = $gameInfo->$gameID->data->name;
-    // $title = "<a href=\"https://store.steampowered.com/app/$gameID\" target=\"_blank\" rel=\"noopener noreferrer\">$title - $gameID</a>";
-    $title = <<<LINK
-    <a href="https://store.steampowered.com/app/$gameID" target="_blank" rel="noopener noreferrer">$title - $gameID</a>
-    LINK;
+    $title = "<a href=\"https://store.steampowered.com/app/$gameID\" target=\"_blank\" rel=\"noopener noreferrer\">$title - $gameID</a>";
+    // $title = <<<LINK
+    // <a href="https://store.steampowered.com/app/$gameID" target="_blank" rel="noopener noreferrer">$title - $gameID</a>
+    // LINK;
     $content = getReview();
 } else {
     $title = 'Game not found';
