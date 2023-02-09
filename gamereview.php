@@ -8,37 +8,22 @@
     <title>Steam REVIEW PHP</title>
 </head>
 
-<?php
-require_once('./func/fetch.php');
-// $gameID = $_GET['gameid'];
-// $title = 'asljgakljgsdkf';
-// $content = 'jb sdljkf sldflsdg lsjdfgl sjdf glsjdf gsdfg';
-?>
-
 <body>
     <div class="sticky">
         <a href="./index.php">На главную</a>
-        <!-- <form> -->
         <div class="review-header-inside">
             <input type="text" id="game-link" name="game-link"
                 placeholder="https://store.steampowered.com/app/275850/No_Mans_Sky/">
             <input type="submit" value="Получить" onclick="openLink(event)">
         </div>
         <a href="./clipboard.php">Из буфера</a>
-        <!-- </form> -->
     </div>
     <div id="root">
+        <?php require_once('./func/fetch.php'); ?>
         <h1>
             <?= $title ?><br>Не рекомендую
         </h1>
-
-        <?php
-        // echo 'AAA' . $test;
-        // echo '<br>';
-        // echo '<br>';
-        echo $content;
-        ?>
-
+        <?= $content ?>
     </div>
 </body>
 <script>

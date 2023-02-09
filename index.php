@@ -8,6 +8,10 @@
     <title>Get Steam REVIEW PHP</title>
 </head>
 
+<?php
+// чтобы не было Hack на github
+?>
+
 <body>
     <div class="logo">
         <a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">
